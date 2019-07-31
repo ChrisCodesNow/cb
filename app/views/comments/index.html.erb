@@ -1,0 +1,9 @@
+<h1>Community Thoughts</h1>
+
+<% @comments.each do |comment| %>
+    <p>
+        <strong><%= comment.name %></strong><br>
+        <%= comment.comment %>
+    </p>
+    
+<% end %>
