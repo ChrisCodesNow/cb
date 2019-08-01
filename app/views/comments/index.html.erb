@@ -6,7 +6,8 @@
     <p>
         <strong><%= comment.name %></strong><br>
         <%= comment.comment %><br>
-        <%= link_to 'Edit comment', comment_path(comment) %>
+        <%= link_to 'View comment', comment_path(comment) %>
+        <%= link_to 'Edit comment', edit_comment_path(comment) %>
     </p>
     
 <% end %>
