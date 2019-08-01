@@ -3,7 +3,8 @@
 <% @comments.each do |comment| %>
     <p>
         <strong><%= comment.name %></strong><br>
-        <%= comment.comment %>
+        <%= comment.comment %><br>
+        <%= link_to 'Edit comment', comment_path(comment) %>
     </p>
     
 <% end %>
