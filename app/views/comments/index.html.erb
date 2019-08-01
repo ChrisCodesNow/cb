@@ -1,5 +1,7 @@
 <h1>Community Thoughts</h1>
 
+<%= link_to 'New Comment', new_comment_path %>
+
 <% @comments.each do |comment| %>
     <p>
         <strong><%= comment.name %></strong><br>
