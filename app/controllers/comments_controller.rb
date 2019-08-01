@@ -10,16 +10,18 @@ class CommentsController < ApplicationController
     
     
     def new
-        
+        @comment = Comment.new
     end
 
     
     def create
-        
         @comment = Comment.new(comment_params)    
 
-        @comment.save
-        redirect_to @comment
+        if @comment.save
+            redirect_to @comment
+        else
+            render 'new'
+        end
     end
 
     private
