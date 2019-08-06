@@ -1,13 +1,23 @@
-<h1>Community Thoughts</h1>
+<%= render 'header' %>
 
-<%= link_to 'New Comment', new_comment_path %>
+<div class="container">
+    <h1>Community Thoughts</h1>
 
-<% @comments.each do |comment| %>
-    <p>
-        <strong><%= comment.name %></strong><br>
-        <%= comment.comment %><br>
-        <%= link_to 'View comment', comment_path(comment) %>
-        <%= link_to 'Edit comment', edit_comment_path(comment) %>
-    </p>
+    <a class="btn btn-primary" href="<%= new_comment_path %>"> New Comment </a>
+    <br><br><br>
+
     
-<% end %>
+    <% @comments.each do |comment| %>
+
+        <p><%= comment.picture %>
+        <div class="card bg-dark text-light" style="width: 25rem;">
+        <img src="https://cdn.pixabay.com/photo/2019/02/26/11/49/small-4021848_960_720.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><%= comment.name %></h5>
+            <p class="card-text"><%= comment.comment %></p>
+            <%= link_to 'Edit comment', edit_comment_path(comment) %>
+        </div>
+        </div><br>
+        
+    <% end %>
+</div>

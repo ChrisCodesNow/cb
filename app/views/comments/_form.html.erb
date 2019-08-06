@@ -23,6 +23,12 @@
     </p>
 
     <p>
+        <%= form.label :picture %><br>
+        <%= form.text_field :picture, value:current_user.attributes["picture"] %>
+
+    </p>
+
+    <p>
         <%= form.submit %>
     </p>
     

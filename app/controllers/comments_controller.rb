@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+    before_action :authenticate
+    
     def index
         @comments = Comment.all
     end
-
+    
     
     def show
         @comment = Comment.find(params[:id])

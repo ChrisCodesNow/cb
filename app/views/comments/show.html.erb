@@ -1,12 +1,22 @@
-<p>
-    <strong>Name:</strong>
-    <%= @comment.name %>
-</p>
+<%= render 'header' %>
 
-<p>
-    <strong>Comment:</strong>
-    <%= @comment.comment %>
-</p>
+<div class="container">
+    <p>
+        <strong>Name:</strong>
+        <%= @comment.name %>
+    </p>
 
-<%= link_to 'Edit', edit_comment_path %>
-<%= link_to 'Back', comments_path %>
+    <p>
+        <strong>Comment:</strong>
+        <%= @comment.comment %>
+    </p>
+
+
+    <p>
+        <strong>Img:</strong>
+        <img src="<%= @comment.picture %>">
+    </p>
+
+    <%= link_to 'Edit', edit_comment_path %>
+    <%= link_to 'Back', comments_path %>
+</div>

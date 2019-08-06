@@ -1,0 +1,11 @@
+<% if current_user %>
+    <% current_user.attributes.each do |key, val| %>
+        <% if key == 'picture' %>
+            <img src="<%= val %>">
+        <% else %>
+            <p>
+                <%= key %>: <%= val %>
+            </p>
+            <% end %>
+    <% end %>
+<% end %>
