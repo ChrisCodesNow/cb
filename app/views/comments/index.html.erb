@@ -9,14 +9,17 @@
     
     <% @comments.each do |comment| %>
 
-        <p><%= comment.picture %>
         <div class="card bg-dark text-light" style="width: 25rem;">
-        <img src="https://cdn.pixabay.com/photo/2019/02/26/11/49/small-4021848_960_720.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><%= comment.name %></h5>
-            <p class="card-text"><%= comment.comment %></p>
-            <%= link_to 'Edit comment', edit_comment_path(comment) %>
-        </div>
+            <img src="https://cdn.pixabay.com/photo/2019/02/26/11/49/small-4021848_960_720.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= comment.name %></h5>
+                <p class="card-text"><%= comment.comment %></p>
+                <%= link_to 'Edit comment', edit_comment_path(comment) %>
+            </div>
+            <div class="card-body time-stamp">
+                <p>Created: <%= comment.created_at %><br>
+                Updated: <%= comment.updated_at %></p>
+            </div>
         </div><br>
         
     <% end %>
