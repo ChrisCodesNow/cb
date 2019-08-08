@@ -3,6 +3,10 @@ class CommentsController < ApplicationController
     
     def index
         @comments = Comment.all
+
+        @comments = @comments.sort do |comment, other_comment|
+            other_comment.updated_at <=> comment.updated_at
+        end
     end
     
     
