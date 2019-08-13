@@ -45,6 +45,14 @@ class CommentsController < ApplicationController
             render 'edit'
         end
     end
+
+    
+    def destroy
+        @comment = Comment.find(params[:id])
+        @comment.destroy
+
+        redirect_to comments_path
+    end
     
 
     private
